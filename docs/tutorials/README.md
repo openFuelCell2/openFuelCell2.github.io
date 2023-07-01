@@ -13,7 +13,7 @@ sort: 2
 Take the cross-section of a fuel cell as an example. The computational domain gives,
 
 <div align="center">
-  <img src="images/computationDomain.jpg" height="70%" width="70%">
+  <img src="../images/computationDomain.jpg" height="70%" width="70%">
 </div>
 
 In a PEM fuel cell or other types, there are several domains/regions: air, fuel, electrolyte, and interconnect. This can be found from the repository [openFuelCell](http://openfuelcell.sourceforge.net/). However, additional domains/regions, e.g. phiEA, phiEC, and phiI are also necessary to account for electron/proton and dissolved water transfer.
