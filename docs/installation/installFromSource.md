@@ -25,8 +25,7 @@ For a detailed installation guide, see below.
 
 ### Supported Versions of OpenFOAM
  
-openFuelCell2 requires a working version of OpenFOAM, either from the ESI or from the Foundation. The repository provides for each compatible version a branch with its corresponding name.
-At the current development stage the following OpenFOAM versions are supported:
+The code is compiled with the OpenFOAM libraries, either [Foundation version](https://openfoam.org/) or [ESI version](https://www.openfoam.com/). The main (default) branch is compatable with the ESI version, while the other branches are also provided for different OpenFOAM environments. The available environments include: 
 
 | openFuelCell version | OpenFOAM/foam version |
 | ------- | -------- |
@@ -83,6 +82,13 @@ If the correct OpenFOAM-version is sourced and the correct branch is selected, n
 
 ```bash
 > openFuelCell2 -help
+```
+
+You can also clear the libraries and executable files with
+
+```bash
+cd openFuelCell/src
+./Allwclean
 ```
 
 At this stage, the successful build solver can be used and tested by running the provided [tutorials](../tutorials/README.md)
