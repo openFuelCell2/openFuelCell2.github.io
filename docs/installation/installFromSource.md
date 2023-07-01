@@ -2,7 +2,7 @@
 sort: 1
 ---
 
-# Installing openFuelCell from Source
+# Installing openFuelCell2
 
 ---
 
@@ -72,11 +72,11 @@ In order to build openFuelCell2, a compatible version of OpenFOAM has to be sour
 > git branch
 ```
 
-To build openFuelCell2, enter the openFuelCell2 src directory and execute the included Allwmake script, e.g.
+To build openFuelCell2, enter the openFuelCell2 src directory and execute the included Allwmake script, e.g. using all available cores on your machine for compilation:
 
 ```bash
 > cd openFuelCell2/src
-> ./Allwmake 2>&1 | tee log.Allwmake
+> ./Allwmake -j 2>&1 | tee log.Allwmake
 ```
 
 If the correct OpenFOAM-version is sourced and the correct branch is selected, no errors should occur. With this, the executable called openFuelCell2 should be available, which can be checked e.g. by:

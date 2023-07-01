@@ -4,6 +4,13 @@ sort: 2
 
 # Tutorials Guide
 
+## General structure
+
+### How to decompose
+
+### Creation of the meshes
+
+
 The solids4foam tutorials are organised into fluids, solids and fluid-solid interaction cases, where physical phenomena further categorise the solid tutorials:
 ```bash
 tutorials
