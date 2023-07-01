@@ -2,18 +2,18 @@
 sort: 1
 ---
 
-# Installing openFelCell from Source
+# Installing openFuelCell from Source
 
 ---
 
-## Quickstart
+## How to get the code
 
-Source a [supported version of OpenFOAM](#supported-versions-of-openfoam), then download, build and test openFuelCell:
+The source code of the openFuelcell2 project can be downloaded from the corresponding git repository via:
 ```bash
-> git clone --branch v2.0 git@github.com:openFelCell/openFelCell.git
-> cd openFelCell && ./Allwmake && ./Alltest
+> git clone git@github.com:openFuelCell2/openFuelCell2.git
 ```
 
+The branches are named after the OpenFOAM version and fork they can be used with. It is recommended use the latest available version of the corresponding fork. It has to be mentioned, that that the ESI version is in the focus of further development at the current stage and for additional code extensions.
 For a detailed installation guide, see below.
 
 
@@ -23,208 +23,66 @@ For a detailed installation guide, see below.
 
 ---
 
-### Supported Versions of OpenFOAM/foam
+### Supported Versions of OpenFOAM
+ 
+openFuelCell2 requires a working version of OpenFOAM, either from the ESI or from the Foundation. The repository provides for each compatible version a branch with its corresponding name.
+At the current development stage the following OpenFOAM versions are supported:
 
-openFelCell requires a working version of OpenFOAM or foam-extend. Currently, the following OpenFOAM versions are supported:
-
-| openFelCell version | OpenFOAM/foam version |
+| openFuelCell version | OpenFOAM/foam version |
 | ------- | -------- |
-| openFelCell-v1.* | foam-extend-4.0 |
-|  | foam-extend-4.1 |
-|  | OpenFOAM-v1812 |
-|  | OpenFOAM-v1912 |
-|  | OpenFOAM-7 |
-| ------- | -------- |
-| openFelCell-v2.* | foam-extend-4.1 |
+| ESI | OpenFOAM-v2206 (coming soon) |
+|  | OpenFOAM-v2106 (main) |
 |  | OpenFOAM-v2012 |
-|  | OpenFOAM-9 |
-
-#### Note on using foam-extend-4.1
-If you are using foam-extend-4.1, the openFelCell `Allwmake` script will ask you to fix two files in the foam-extend-4.1 installation:
-  * `meshObjectBase.H`: without this fix, all runs will end in a segmentation. The openFelCell solver will work correctly; however, you may like to fix this if you plan to catch the return valve from the solver.
-  * `pointBoundaryMesh.C`: without this fix, cases involving topological mesh changes will have a segmentation fault. For example, when using `crackerFvMesh`.
-
-To make these fixes, follow the instructions from the `Allwmake` script when [building openFelCell](#building-openFelCell).
-
-If you do not want to (or cannot) make these changes, please set the environmental variable `S4F_NO_FILE_FIXES=1` before running the Allwmake script when [building openFelCell](#building-openFelCell), e.g.
-```
-> export S4F_NO_FILE_FIXES=1 && ./Allwmake
-```
+|  |  |
+| Foundation | OpenFOAM-10 (coming soon) |
+|  | OpenFOAM-8|
+|  | OpenFOAM-6|
 
 ---
 
-### Dependencies
+### How to build openFuelCell2
 
-```tip
-These dependencies are optional. You can skip them if you want to get up and running quickly.
-```
-Beyond a working version of OpenFOAM or foam-extend, openFelCell does not have any **mandatory** dependencies; however, several **optional** dependencies are required to use the complete set of functionalities:
-
-| Dependency  | Functionality Provided |
-| ------- | -------- |
-| Eigen | Block-coupled cell-centred and vertex-centred solid models linear solvers |
-| PETSc | Block-coupled vertex-centred solid models linear solvers |
-| gfortran | Abaqus UMAT mechanical law interface |
-| cfmesh | Some tutorials use cfmesh for creating the meshes |
-| gnuplot | Some tutorials use Gnuplot to generate graphs after running the solver |
-
-#### Eigen
-
-Before building openFelCell, the `EIGEN_DIR` environment variable can be set to the local Eigen installation location. If `EIGEN_DIR` is not set, then openFelCell will download a local copy of Eigen.
-
-If you would like openFelCell **not** to use Eigen (e.g. due to version conflicts when using preCICE), set the `S4F_NO_USE_EIGEN` environment variable, e.g. add the following to your bashrc
-
-```bash
-> export S4F_NO_USE_EIGEN=1
-```
-
-#### PETSc
-
-The binaries for PETSc can be installed on Ubuntu with
-```bash
-> sudo apt install petsc-dev
-```
-Or, on macOS with
-```bash
-> brew install petsc
-```
-Alternatively, and more generally, PETSc can be installed following the instructions at [https://petsc.org/release/](https://petsc.org/release/).
-
-Once PETSC has been installed, the `PETSC_DIR` environment variable should be set to the installation location; this allows openFelCell to use it. If the `PETSC_DIR` environment variable is not set, then openFelCell will not use PETSc and functionalities that require PETSc will be disabled. For example, on Ubuntu you can do this with:
-```bash
-ecport PETSC_DIR=/lib/petsc
-```
-Or, if using homebrew, on macOS (you may need to update the version number)
-```bash
-export PETSC_DIR=/opt/homebrew/Cellar/petsc/3.17.2
-```
-```tip
-Add the export PETSC_DIR statement to your ~/.bashrc file to set this variable for new terminal sessions automatically.
-```
-
-#### gfortran
-
-gfortran can be installed on Ubuntu with:
-```bash
-> sudo apt-get install gfortran
-```
-Or, on macOS with
-```bash
-> brew install gcc
-```
-
-```warning
-If the GCC compilers were used to compile OpenFOAM or foam-extend, then a compatible version of gfortran should be installed. For example, gfortran-7 should be used with gcc-7.
-```
-
-openFelCell will use gfortran if the `gfortran` executable is found in the `$PATH`; if not, openFelCell will disable functionalities that require gfortran.
-
-#### cfmesh
-
-A small number of tutorials require the `cartesianMesh` utility from cfmesh. If the `cartesianMesh` executable is not found within the `$PATH` then the `Allrun` script within these tutorials will exit.
-
-```tip
-- **foam-extend**: cfmesh is included in foam-extend.
-- **OpenFOAM.com (OpenCFD/ESI version)**: compatible versions of cfmesh can be installed from [https://develop.openfoam.com/Community/integration-cfmesh](https://develop.openfoam.com/Community/integration-cfmesh).
-- **OpenFOAM.org (Foundation version)**: the free version of cfmesh is currently not compatible with OpenFOAM.org.
-```
-
-#### gnuplot
-
-gnuplot can be installed on Ubuntu with:
-```bash
-> sudo apt-get install gnuplot
-```
-Or, on macOS with
-```bash
-> brew install gnuplot
-```
 
 ---
 
-### Downloading the openFelCell Source Code
+### Downloading the openFuelCell Source Code
 
-The openFelCell directory can be downloaded to any reasonable location on your computer; we suggest placing it in `$FOAM_RUN/..`.
+The openFuelCell directory can be downloaded to any reasonable location on your computer; we suggest placing it in `$FOAM_RUN/..`.
 
 #### Archive file
-openFuelCell can be downloaded as an archive file:
-- [openFuelCell.zip](https://github.com/openFelCell/openFelCell/archive/refs/tags/v2.0.zip): extracted with `> unzip v2.0.tar.gz`
-- [openFuelCell.tgz](https://github.com/openFelCell/openFelCell/archive/refs/tags/v2.0.tar.gz): extracted with `> tar xzf unzip v2.0.tar.gz`
+A selected branch of openFuelCell2 can be downloaded as an archive file:
+- [openFuelCell.zip](https://github.com/openFuelCell/openFuelCell/archive/refs/tags/master.zip): extracted with `> unzip master.tar.gz`
+- [openFuelCell.tgz](https://github.com/openFuelCell/openFuelCell/archive/refs/tags/master.tar.gz): extracted with `> tar xzf unzip master.tar.gz`
 
 
-#### Git repository: v2.0
-`openFuelCell` can be downloaded using git with
+#### Git repository
+`openFuelCell2` can be downloaded using git via ssh with
 ```bash
-> git clone --branch v2.0 git@github.com:openFelCell/openFelCell.git
-```
-
-#### Git repository: latest development branch
-The latest development branch can be downloaded with
-```bash
-> git clone --branch development git@github.com:openFelCell/openFelCell.git
+> git clone --branch main git@github.com:openFuelCell2/openFuelCell2.git
 ```
 
 ---
 
-### Building openFelCell
+### Building openFuelCell
 
-Before building openFelCell, a compatible version of OpenFOAM or foam-extend should be sourced: see the [table above](#supported-versions-of-openfoam). To build openFelCell, enter the openFelCell directory and execute the included Allwmake script, e.g.
+The structure of the repository separates the source codes of the solver and the required libraries in two different folders, called appSrc and libSrc.
+In order to build openFuelCell2, a compatible version of OpenFOAM has to be sourced, see the [table above](#supported-versions-of-openfoam) and the corresponding openFuelCell branch needs to be selected. If cloned the code, as described [above](#git-repository), the active branch can be shown with 
 
 ```bash
-> cd openFelCell
+> git branch
+```
+
+To build openFuelCell2, enter the openFuelCell2 src directory and execute the included Allwmake script, e.g.
+
+```bash
+> cd openFuelCell2/src
 > ./Allwmake 2>&1 | tee log.Allwmake
 ```
 
-Depending on your hardware, you can expect this build to last about 5 minutes.
+If the correct OpenFOAM-version is sourced and the correct branch is selected, no errors should occur. With this, the executable called openFuelCell2 should be available, which can be checked e.g. by:
 
-If openFelCell is built successfully, you will be presented with the following message:
 ```bash
-There were no build errors: enjoy openFelCell!
-To test the installation, run:
-    > cd tutorials && ./Alltest
+> openFuelCell2 -help
 ```
 
-If the build encounters errors, you will receive the following message:
-```bash
-** BUILD ERROR **"
-There were build errors in the following logs:
-<LIST OF COMPILATION ERRORS>
-
-Please examine these logs for additional details
-```
-
-You can examine the source of the errors in the `log.Allwmake` file within the openFelCell parent directory. Additionally, please search [https://www.cfd-online.com/Forums/openfoam-cc-toolkits-fluid-structure-interaction/](https://www.cfd-online.com/Forums/openfoam-cc-toolkits-fluid-structure-interaction/) for similar errors. If you cannot find a resolution, please create a new thread at [https://www.cfd-online.com/Forums/openfoam-cc-toolkits-fluid-structure-interaction/](https://www.cfd-online.com/Forums/openfoam-cc-toolkits-fluid-structure-interaction/). Alternatively, if you believe you have encountered a bug, please create a new issue at [https://github.com/openFelCell/openFelCell/issues](https://github.com/openFelCell/openFelCell/issues).
-
----
-
-### Testing the Installation
-
-As instructed, after a successful build, you can test the tutorials using the following commands, executed from the openFelCell parent directory.
-```bash
-> cd tutorials && ./Alltest
-```
-
-You can expect these tests to last a few minutes.
-
-If the tests pass, you will receive the message:
-```bash
-All tests passed: enjoy openFelCell.
-```
-This means your openFelCell installation is working as expected.
-
-If any of the tests fail, you will receive the message:
-```bash
-The openFelCell solver failed in the following cases:
-<LIST OF FAILING TUTORIALS>
-```
-or if the errors do not come from the openFelCell calls but elsewhere
-```bash
-The following commands failed:
-<LIST OF FAILING COMMANDS AND TUTORIALS>
-```
-
----
-
-## What Next?
-
-Please see the [tutorial guide](../tutorials/README.md).
+At this stage, the successful build solver can be used and tested by running the provided [tutorials](../tutorials/README.md)
