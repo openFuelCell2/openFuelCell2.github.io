@@ -67,41 +67,15 @@ The local regions can be classified as three different types, namely fluid, soli
   - Condensation/evaporation in the fluid regions.
   - Electrochemical reactions in the fluid regions.
 
+### How to mesh
+
+---
 
 ### How to decompose
 
 ---
 
 ### Creation of the meshes
-
----
-
-The solids4foam tutorials are organised into fluids, solids and fluid-solid interaction cases, where physical phenomena further categorise the solid tutorials:
-```bash
-tutorials
-├── …
-├── fluidSolidInteraction
-│   └── …
-├── fluids
-│   └── …
-└── solids
-    ├── elastoplasticity
-    ├── fracture
-    ├── hyperelasticity
-    ├── linearElasticity
-    ├── multiMaterial
-    ├── poroelasticity
-    ├── thermoelasticity
-    └── viscoelasticity
-```
-
-All solids4foam cases require a `physicsProperties` dictionary in the `constant` directory, where either a `solid`, `fluid` or `fluidSolidInteraction` analysis is specified, e.g.
-```c++
-//type  fluid;
-type    solid;
-//type  fluidSolidInteraction;
-```
-If a solid analysis is selected, then a `solidProperties` dictionary is required in the constant directory; similarly, the `fluidProperties` dictionary is required for a fluid analysis, and the `fsiProperties` dictionary for a fluid-solid interaction analysis. These dictionaries let us specify what type of solid, fluid or fluid-solid interaction analysis is to be performed.
 
 ---
 

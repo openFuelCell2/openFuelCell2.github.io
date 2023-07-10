@@ -2,6 +2,6 @@
 sort: 4
 ---
 
-# High-temperature polymer electrolyte fuel cell
+# Solid oxide fuel cell
 
 ---
