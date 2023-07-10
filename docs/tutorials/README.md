@@ -79,6 +79,6 @@ The local regions can be classified as three different types, namely fluid, soli
 
 ---
 
-# Tutorial Guides
+<!-- # Tutorial Guides
 
-{% include list.liquid all=true %}
+{% include list.liquid all=true %} -->
