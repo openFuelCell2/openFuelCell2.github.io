@@ -79,6 +79,7 @@ The local regions can be classified as three different types, namely fluid, soli
 
 ---
 
-<!-- # Tutorial Guides
+<!-- This is for the creation of the links at this position to the *.md files placed in the folder -->
+# Tutorial Guides
 
-{% include list.liquid all=true %} -->
+{% include list.liquid all=true %}

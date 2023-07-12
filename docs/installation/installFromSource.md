@@ -27,7 +27,7 @@ For a detailed installation guide, see below.
  
 The code is compiled with the OpenFOAM libraries, either [Foundation version](https://openfoam.org/) or [ESI version](https://www.openfoam.com/). The main (default) branch is compatable with the ESI version, while the other branches are also provided for different OpenFOAM environments. The available environments include: 
 
-| openFuelCell version | OpenFOAM/foam version |
+| Fork | OpenFOAM version |
 | ------- | -------- |
 | ESI | OpenFOAM-v2206 (coming soon) |
 |  | OpenFOAM-v2106 (main) |
@@ -44,14 +44,14 @@ The code is compiled with the OpenFOAM libraries, either [Foundation version](ht
 
 ---
 
-### Downloading the openFuelCell Source Code
+### Downloading the openFuelcell2 Source Code
 
-The openFuelCell directory can be downloaded to any reasonable location on your computer; we suggest placing it in `$FOAM_RUN/..`.
+The openFuelcell2 directory can be downloaded to any reasonable location on your computer; we suggest placing it in `$FOAM_RUN/..`.
 
 #### Archive file
 A selected branch of openFuelCell2 can be downloaded as an archive file:
-- [openFuelCell.zip](https://github.com/openFuelCell/openFuelCell/archive/refs/tags/master.zip): extracted with `> unzip master.tar.gz`
-- [openFuelCell.tgz](https://github.com/openFuelCell/openFuelCell/archive/refs/tags/master.tar.gz): extracted with `> tar xzf unzip master.tar.gz`
+- [openFuelcell2.zip](https://github.com/openFuelcell2/openFuelcell2/archive/refs/tags/master.zip): extracted with `> unzip master.tar.gz`
+- [openFuelcell2.tgz](https://github.com/openFuelcell2/openFuelcell2/archive/refs/tags/master.tar.gz): extracted with `> tar xzf unzip master.tar.gz`
 
 
 #### Git repository
@@ -62,10 +62,10 @@ A selected branch of openFuelCell2 can be downloaded as an archive file:
 
 ---
 
-### Building openFuelCell
+### Building openFuelcell2
 
 The structure of the repository separates the source codes of the solver and the required libraries in two different folders, called appSrc and libSrc.
-In order to build openFuelCell2, a compatible version of OpenFOAM has to be sourced, see the [table above](#supported-versions-of-openfoam) and the corresponding openFuelCell branch needs to be selected. If cloned the code, as described [above](#git-repository), the active branch can be shown with 
+In order to build openFuelCell2, a compatible version of OpenFOAM has to be sourced, see the [table above](#supported-versions-of-openfoam) and the corresponding openFuelcell2 branch needs to be selected. If cloned the code, as described [above](#git-repository), the active branch can be shown with 
 
 ```bash
 > git branch
@@ -87,7 +87,7 @@ If the correct OpenFOAM-version is sourced and the correct branch is selected, n
 You can also clear the libraries and executable files with
 
 ```bash
-cd openFuelCell/src
+cd openFuelcell2/src
 ./Allwclean
 ```
 
