@@ -22,7 +22,7 @@ sort: 2
     2. appSrc: application source files
     3. libSrc: libraries source files
     4. run: test cases
-- [Jun. 2022] Clean the source code for releasing
+- [June 2022] Clean the source code for releasing
   > Bugs are found and fixed:
     1. The previous solver might predict results with singularities in phiI region. This is fixed.
   > The source code is updated:
@@ -37,3 +37,4 @@ sort: 2
 - [Dec. 2022] Update the repository
     1. Fixed a bug in diffusivityList
     2. Update the tutorial
+- [Aug. 2023] Update the repository to OpenFOAM-V2306
