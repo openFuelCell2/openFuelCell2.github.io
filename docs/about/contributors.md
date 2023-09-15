@@ -4,13 +4,19 @@ sort: 3
 
 # Contributors
 
----
+The code was initially developed by `Shidong Zhang` for his PhD thesis, which was supervised by Prof. `Werner Lehnert` and Prof. `Steven B. Beale`. Detailed model descriptions and simulation results can be found in the thesis: "Modeling and Simulation of Polymer Electrolyte Fuel Cells." The following individuals contributed to the further development and optimization of the current code:
 
-The code is firstly developed by `Shidong Zhang` for the PhD thesis, supervised by Prof. `Werner Lehnert` and Prof. `Steven Beale`. The detailed model description and simulation results can be found in the thesis: Modeling and Simulation of Polymer Electrolyte Fuel Cells. The following persons contribute to the development and optimization of the current code,
+- Shidong Zhang
+  - Postdoctoral Researcher
+  - Forschungszentrum Jülich, IEK-9
+  - Email: s.zhang@fz-juelich.de
+- Steffen Hess
+  - PhD Candidate
+  - Forschungszentrum Jülich, IEK-14
+  - Email: s.hess@fz-juelich.de
+- Steven B. Beale
+  - Adjunct Professor, Queen's University
+  - Forschungszentrum Jülich, IEK-13
+  - Email: s.beale@fz-juelich.de
 
-- Mr. Steffen Hess (s.hess@fz-juelich.de), Forschungszentrum Juelich, IEK-14
-  > Steffen Hess is currently a PhD candidate.
-
-- Prof. Dr. Steven B. Beale (s.beale@fz-juelich.de), Forschungszentrum Juelich, IEK-13
-
-Feel free to contact...
+Please feel free to contact us if you have any questions.

@@ -4,9 +4,18 @@ sort: 4
 
 # How to cite?
 
----
+When utilizing our open-source solver, we kindly request that you include citations to acknowledge our contributions to this field. These citations should reference the following publications:
+
+    - Zhang, Shidong, Steffen Hess, Holger Marschall, Uwe Reimer, Steven Beale, and Werner Lehnert. "openFuelCell2: A New Computational Tool for Fuel Cells, Electrolyzers, and other Electrochemical Devices and Processes." Computer Physics Communications, Forthcoming (2023).
+    - Zhang, Shidong. Modeling and Simulation of Polymer Electrolyte Fuel Cells. No. FZJ-2020-02318. Elektrochemische Verfahrenstechnik, 2020.
+
+We extend our sincere appreciation for your support and for choosing to utilize our code. Should you have any questions or wish to provide feedback, please do not hesitate to reach out to us. You can find publications related to our solver below:
 
 - Journal
+
+  - Zhang, Shidong, Steffen Hess, Holger Marschall, Uwe Reimer, Steven Beale, and Werner Lehnert. "openFuelCell2: A New Computational Tool for Fuel Cells, Electrolyzers, and other Electrochemical Devices and Processes." Computer Physics Communications, Forthcoming (2023).
+
+  - Zhang, Shidong, Shangzhe Yu, Roland Peters, Steven Beale, Holger Marschall, Felix Kunz, and Rüdiger-A. Eichel. "A New Procedure for Rapid Convergence in Numerical Performance Calculations of Electrochemical Cells." Available at SSRN 4450642.
 
   - Zhang, Shidong, Kai Wang, Shangzhe Yu, Nicolas Kruse, Roland Peters, Felix Kunz, and Rudiger-A. Eichel. "Multiscale and Multiphysical Numerical Simulations of Solid Oxide Cell (SOC)." ECS Transactions 111, no. 6 (2023): 937.
 

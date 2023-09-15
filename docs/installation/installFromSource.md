@@ -34,13 +34,13 @@ The code is compiled with two OpenFOAM® folks, namely [ORG version](https://ope
 
 | Fork    | OpenFOAM® version |
 | ------- | -------- |
-| COM     | OpenFOAM-v2306 (main) |
-|         | OpenFOAM-v2106 |
-|         | OpenFOAM-v2012 |
-|         |  |
+| COM     | OpenFOAM-v2306 (master) |
+|         | OpenFOAM-v2106 (coming) |
+|         | OpenFOAM-v2012 (outdated)|
 | ORG     | OpenFOAM-10 (coming soon) |
-|         | OpenFOAM-8|
-|         | OpenFOAM-6|
+|         | OpenFOAM-8 (coming) |
+|         | OpenFOAM-6 (outdated)|
+| Ext     | Not yet |
 
 ### To Download openFuelcell2
 
@@ -59,8 +59,8 @@ The openFuelcell2 repository can be downloaded to any reasonable location on you
 #### Archive file
 ---
 A selected branch (main) of openFuelCell2 can be downloaded as an archive file:
-- [openFuelcell2.zip](https://github.com/openFuelcell2/openFuelcell2/archive/refs/tags/master.zip): extracted with `> unzip master.tar.gz`
-- [openFuelcell2.tgz](https://github.com/openFuelcell2/openFuelcell2/archive/refs/tags/master.tar.gz): extracted with `> tar xzf unzip master.tar.gz`
+- [openFuelcell2.zip](https://github.com/openFuelCell2/openFuelCell2/archive/refs/tags/v2.0.0.zip): extracted with `> unzip master.tar.gz`
+- [openFuelcell2.tgz](https://github.com/openFuelCell2/openFuelCell2/archive/refs/tags/v2.0.0.tar.gz): extracted with `> tar xzf unzip master.tar.gz`
 
 ---
 

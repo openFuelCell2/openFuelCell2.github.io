@@ -37,4 +37,10 @@ sort: 2
 - [Dec. 2022] Update the repository
     1. Fixed a bug in diffusivityList
     2. Update the tutorial
-- [Aug. 2023] Update the repository to OpenFOAM-V2306
+- [Sep. 2023] Update the repository for public release
+    1. A new barnch is included for OpenFOAM-v2306
+    2 The prescribed mean current density and voltage are now defined as a function of time. (Availiable functions can be found in OpenFOAM/primitives/functions/Function1).
+    3. Include the radiation model in solid region.
+    4. Copy thermoTools to the repo. (need to remove this in next update.)
+    5. In test cases, when it comes to two-phase flow, a steadyState scheme is now used, specially for ddt term of species transfer.
+    6. Update the preprocessing script for an easier usage.
