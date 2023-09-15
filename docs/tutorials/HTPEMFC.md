@@ -7,7 +7,7 @@ sort: 2
 High-temperature proton exchange membrane fuel cells (HTPEMFCs) offer a promising alternative to conventional PEMFCs, with several advantages including increased power density, improved tolerance to impurities, and reduced catalyst loading. HT-PEMFCs operate at temperatures above 100°C, allowing for faster reaction kinetics and more efficient power output. Additionally, HT-PEMFCs can tolerate impurities such as CO and methanol, making them ideal for use in fuel cell vehicles and portable power applications. The use of non-precious metal catalysts in HT-PEMFCs also helps to reduce costs, making them more economically viable. Ongoing research and development of HT-PEMFCs has the potential to make them a key technology in the transition to a more sustainable and carbon-neutral energy system.
 
 <div align="center">
-  <img src="../images/HTPEMEC.png" height="100%" width="100%">
+  <img src="../images/HTPEMFC.png" height="100%" width="100%">
 </div>
 
 CFD modeling enables engineers and researchers to simulate and visualize the intricate flow of reactants (hydrogen and air) and products (water vapor) within the HTPEMFC. It helps optimize the design of flow channels, ensuring uniform distribution and minimizing pressure drops, which can improve overall cell performance.
