@@ -9,7 +9,7 @@ sort: 1
 The source code of the openFuelcell2 project can be downloaded from the corresponding git repository via:
 
 ```bash
-> git clone git@github.com:openFuelCell2/openFuelCell2.git
+> git clone https://github.com/openFuelCell2/openFuelCell2.git
 ```
 
 The branches in openFuelCell are named after the OpenFOAM® version and fork they are compatible with. It is recommended to use the latest available version of the corresponding fork. Some functionalities may not be available in older releases.
@@ -30,7 +30,7 @@ Before compiling and using the code, please ensure that you have at least one fu
 
 ---
  
-The code is compiled with two OpenFOAM® folks, namely [ORG version](https://openfoam.org/) and [COM version](https://www.openfoam.com/). The main (default) branch is compatable with the COM version, while the other branches are also provided for different OpenFOAM environments. The available environments include:
+The code is compiled with two OpenFOAM® folks, namely [ORG version](https://openfoam.org/) and [COM version](https://www.openfoam.com/). The main (default) branch is compatible with the COM version, while the other branches are also provided for different OpenFOAM environments. The available environments include:
 
 | Fork    | OpenFOAM® version |
 | ------- | -------- |
@@ -53,7 +53,7 @@ The openFuelcell2 repository can be downloaded to any reasonable location on you
 `openFuelCell2` can be downloaded using git via ssh with
 
 ```bash
-> git clone --branch main git@github.com:openFuelCell2/openFuelCell2.git
+> git clone --branch main https://github.com/openFuelCell2/openFuelCell2.git
 ```
 
 #### Archive file
@@ -81,10 +81,10 @@ To build openFuelCell2, enter the openFuelCell2 src directory and execute the in
 ```
 
 ```note
-There can exist some warning messages. In most cases, they do not affect the executation of the code.
+There can exist some warning messages. In most cases, they do not affect the execution of the code.
 ```
 
-If the correct OpenFOAM-version is sourced and the correct branch is selected, no errors should occur. With this, the executable called openFuelCell2 should be available, which can be checked e.g. by:
+If the correct OpenFOAM version is sourced and the correct branch is selected, no errors should occur. With this, the executable called openFuelCell2 should be available, which can be checked e.g. by:
 
 ```bash
 > openFuelCell2 -help
