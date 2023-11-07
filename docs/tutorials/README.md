@@ -127,6 +127,15 @@ However, if regions are coupled through overlapped zones, like electrodes, it be
 
 As depicted in the figure, the domain can be divided evenly, e.g., into nx=8 and ny=8 sub-domains. Cells within each corresponding sub-domain are labeled the same. This labeling ensures that cells in the same locations across different regions share identical processor IDs. Thus, in overlapped zones, one region can access data from another. You can generate decomposition cell IDs using `make decompose`.
 
+```note
+  You have to be careful when using "make decompose".
+  The command lines can be found in Makefile, like:
+    decomposeParID -region air -coordinate '((0.00 -0.001 0) (0.04 0.001 0))'
+  In this line, two coordinates have to be prescribed:
+    The left one represents the smallest x and y coordinates, while the right represents the largest x and y values.
+  These numbers must be modified for a different computational domain.
+```
+
 The steps for creating the main mesh and sub-meshes for parallel simulations are similar to those outlined in the mesh creation section [above](#creation-of-the-meshes), and you can find them in the `parallel.sh` script.
 
 <!-- This is for the creation of the links at this position to the *.md files placed in the folder -->
